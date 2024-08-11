@@ -18,12 +18,12 @@ const QRScanner = ({ onScan }) => {
   return (
     <div>
       <QrScanner
-            delay={ 300 }
-            style={ {width: '100%'} }
-            constraints={{aspectRatio: 1,  facingMode: { ideal: "environment" } }}
-            onDecode={(result) => setQrByScan(result)}
-            onError={(error) => console.log(error?.message)}
-        />
+        delay={300}
+        onError={handleError}
+        onScan={handleScan}
+        style={{ width: '100%' }}
+        constraints={{aspectRatio: 1,  facingMode: { ideal: "environment" } }}
+      />
       {error && <p className="text-red-500">{error}</p>}
     </div>
   );
