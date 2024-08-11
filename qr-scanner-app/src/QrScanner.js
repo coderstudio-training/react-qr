@@ -22,7 +22,11 @@ const QRScanner = ({ onScan }) => {
         onError={handleError}
         onScan={handleScan}
         style={{ width: '100%' }}
-        constraints={{aspectRatio: 1,  facingMode: { ideal: "environment" } }}
+        ViewFinder={function noRefCheck(){}}
+        constraints={{
+            facingMode: 'environment'
+        }}
+
       />
       {error && <p className="text-red-500">{error}</p>}
     </div>
